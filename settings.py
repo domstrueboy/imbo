@@ -1,2 +1,2 @@
-token = '3ac1e44...8122f23abd'
-confirmation_token = '6f....f0'
+token = '3ac1e44968d2a65aa942e2028053f7da063a8e24237443b25e10134d752798f903c8397d805f122f23abd'
+confirmation_token = '6fa97ab0'
