@@ -1,0 +1,69 @@
+[
+{ "ru": "Я не знаю", "en": [ "i don't know", "i do not know", "i dont know" ],	"tips": ["know"], "type": "-" },
+                                                                                                                                                                                        
+{ "ru": "Я думаю", "en": [ "i think" ], "tips": ["think"] },
+                                                                                                                                                                                         
+{ "ru": "Ты знаешь?", "en": [ "do you know" ], "tips": ["know"] },
+                                                                                                                                                                                         
+{ "ru": "Мне не нужен другой друг", "en": [ "i do not need another friend", "i dont need another friend" ],	"tips": ["need", "another"] },
+                                                                                                                                                                                         
+{ "ru": "Я действительно хороший слушатель", "en": [ "i am a really good listener", "im a really good listener" ], "tips": ["really", "listener"] },
+                                                                                                                                                                                         
+{ "ru": "Почему она учится?", "en": [ "why does she study"], "tips": ["study"] },
+                                                                                                                                                                                         
+{ "ru": "Он будет делить", "en": [ "he will share", "hell share"], "tips": ["share"] },
+                                                                                                                                                                                         
+{ "ru": "Вы будете играть", "en": [ "you will play", "youll play"], "tips": ["play"] },
+                                                                                                                                                                                         
+{ "ru": "Ты не доверял", "en": [ "you did not trust", "you didnt trust"], "tips": ["trust"] },
+                                                                                                                                                                                         
+{ "ru": "Оно не закрыло", "en": [ "it did not close", "it didnt close"], "tips": ["it", "close"] },
+                                                                                                                                                                                         
+{ "ru": "Они думают?", "en": [ "do they think"], "tips": ["think"] },
+                                                                                                                                                                                         
+{ "ru": "Он доверяет", "en": [ "he trusts" ], "tips": ["trust"] },
+                                                                                                                                                                                         
+{ "ru": "Оно думает?", "en": [ "does it think" ], "tips": ["think"] },
+                                                                                                                                                                                         
+{ "ru": "Они не пойдут", "en": [ "they will not go", "they wont go"], "tips": ["go"] },
+                                                                                                                                                                                         
+{ "ru": "Ты видел", "en": [ "you saw" ], "tips": ["see"] },
+                                                                                                                                                                                         
+{ "ru": "Он встречается", "en": [ "he meets" ], "tips": ["meet"] },
+                                                                                                                                                                                         
+{ "ru": "Она открывает", "en": [ "she opens" ], "tips": ["open"] },
+                                                                                                                                                                                         
+{ "ru": "Мы не говорили", "en": [ "we did not speak", "we didnt speak" ], "tips": ["speak"] },
+                                                                                                                                                                                         
+{ "ru": "Мы увидим?", "en": [ "will we see" ], "tips": ["see"] },
+                                                                                                                                                                                         
+{ "ru": "Я буду говорить", "en": [ "i will speak", "ill speak" ], "tips": ["speak"] },
+                                                                                                                                                                                         
+{ "ru": "Он идет?", "en": [ "does he go" ], "tips": ["go"] },
+                                                                                                                                                                                         
+{ "ru": "Я видел", "en": [ "i saw" ], "tips": ["see"] },
+                                                                                                                                                                                         
+{ "ru": "Я работал", "en": [ "i worked" ], "tips": ["work"] },
+                                                                                                                                                                                         
+{ "ru": "Я не увижу", "en": [ "i will not see", "i wont see" ], "tips": ["see"] },
+                                                                                                                                                                                         
+{ "ru": "Она говорит?", "en": [ "does she speak" ], "tips": ["speak"] },
+                                                                                                                                                                                         
+{ "ru": "Ты работаешь?", "en": [ "do you work" ], "tips": ["work"] },
+                                                                                                                                                                                         
+{ "ru": "Она открывает?", "en": [ "does she open" ], "tips": ["open"] },
+                                                                                                                                                                                         
+{ "ru": "Они не открывали", "en": [ "they did not open", "they didnt open" ], "tips": ["open"] },
+                                                                                                                                                                                         
+{ "ru": "Мы встречались?", "en": [ "did we meet" ], "tips": ["meet"] },
+                                                                                                                                                                                         
+{ "ru": "Ты пойдешь?", "en": [ "will you go" ], "tips": ["go"] },
+                                                                                                                                                                                         
+{ "ru": "Они открывали?", "en": [ "did they open" ], "tips": ["open"] },
+                                                                                                                                                                                         
+{ "ru": "Они откроют", "en": [ "they will open", "theyll open" ], "tips": ["open"] },
+                                                                                                                                                                                         
+{ "ru": "Я говорил", "en": [ "i spoke" ], "tips": ["speak"] },
+                                                                                                                                                                                         
+{ "ru": "Я не спрашивал", "en": [ "i did not ask", "i didnt ask" ], "tips": ["ask"] }
+]

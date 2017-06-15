@@ -1,6 +1,11 @@
 import vkapi
 import random
-from base import voc
+#from base import voc
+import json
+
+with open('base.json', 'r') as f:
+     voc = json.load(f)
+print('voc = ' + str(voc))
 
 def check_answer(body, item):
     data = body['body'].strip().lower()
