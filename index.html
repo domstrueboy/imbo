@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>IMBO</title>
+
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	</head>
+	<body>
+
+		<div id="app" class="container-fluid">
+			<div class="row">
+			    <div class="col-2 hidden-sm-down"></div>
+			    <div class="subject col" style="background: red">
+			      	<input type="text" v-model="message"><button class="btn btn-sm btn-outline-primary">Submit</button>
+			      	<div class="row">
+			      		<div class="col">
+			      			<div style="background: blue">
+			      				<p>Подлежащее</p>
+			      				<button v-for="word in pronounses" class="btn btn-sm btn-outline-primary">{{ word }}</button>
+			      			</div>
+			      			<div style="background: yellow">Вспомогательный глагол</div>
+			      		</div>
+			      		<div class="col" style="background: darkgreen">Сказуемое</div>
+			      		<div class="col" style="background: cyan">Всё остальное</div>
+			      	</div>
+			    </div>
+			    <div class="col-2 hidden-sm-down"></div>
+			 </div>
+		</div>
+		
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
