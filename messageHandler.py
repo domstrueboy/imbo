@@ -3,6 +3,7 @@ import random
 import json
 
 with open('imbo/base.json', 'r') as f:
+#with open('base.json', 'r') as f:
      voc = json.load(f)
 
 def check_answer(body, item):
