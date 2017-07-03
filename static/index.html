@@ -15,7 +15,7 @@
 			    <div class="col-2 hidden-sm-down"></div>
 			    <div class="subject col" style="background: red">
 			    	<p>{{ ru }}</p>
-			      	<input type="text" v-model="en"><button class="btn btn-sm btn-outline-primary">Submit</button>
+			      	<input type="text" v-model="en"><button v-on:click="checkPhrase()" class="btn btn-sm btn-outline-primary">Submit</button>
 			      	<div class="row">
 			      		<div class="col">
 			      			<div style="background: blue">
