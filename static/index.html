@@ -13,22 +13,43 @@
 		<div id="app" class="container-fluid">
 			<div class="row">
 			    <div class="col-2 hidden-sm-down"></div>
-			    <div class="subject col" style="background: red">
-			    	<p>{{ ru }}</p>
-			      	<input type="text" v-model="en"><button v-on:click="checkPhrase()" class="btn btn-sm btn-outline-primary">Submit</button>
+			    <div class="subject col">
+
+			    	<p>{{ phrase.ru }}</p>
+
+			    	<div v-if="ok === true" class="alert alert-success" role="alert">
+					  	<strong>Well done!</strong> You successfully read this important alert message.
+					</div>
+
+					<div v-else-if="ok === false" class="alert alert-danger" role="alert">
+					  	<strong>Oh snap!</strong> Change a few things up and try submitting again.
+					</div>
+
+			      	<input type="text" v-model="input" v-on:keyup.enter="checkPhrase()"><button v-on:click="checkPhrase()" class="btn btn-sm btn-outline-success">Submit</button>
+
 			      	<div class="row">
 			      		<div class="col">
-			      			<div style="background: blue">
-			      				<p>Подлежащее</p>
-			      				<button v-on:click="inputWord(pronounce)" v-for="pronounce in pronounses" class="btn btn-sm btn-outline-primary">{{ pronounce }}</button>
+			      			<div>
+			      				<br>
+			      				<div v-for="row in pronounses" class="row">
+			      					<button v-on:click="inputWord(pronounce)" v-for="pronounce in row" class="btn btn-sm btn-outline-primary">{{ pronounce }}</button>
+			      				</div>
 			      			</div>
-			      			<div style="background: yellow">
-			      				<p>Вспомогательный глагол</p>
-			      				<button v-on:click="inputWord(auxiliar)" v-for="auxiliar in auxiliary" class="btn btn-sm btn-outline-secondary">{{ auxiliar }}</button>
+			      			<div>
+			      				<br>
+			      				<div v-for="row in auxiliary" class="row">
+			      					<button v-on:click="inputWord(auxiliar)" v-for="auxiliar in row" class="btn btn-sm btn-outline-secondary">{{ auxiliar }}</button>
+			      				</div>
 			      			</div>
 			      		</div>
-			      		<div class="col" style="background: darkgreen">Сказуемое</div>
-			      		<div class="col" style="background: cyan">Всё остальное</div>
+
+			      		<div class="col">
+			      			<p>Сказуемое</p>
+			      		</div>
+
+			      		<div class="col">
+			      			<p>Всё остальное</p>
+			      		</div>
 			      	</div>
 			    </div>
 			    <div class="col-2 hidden-sm-down"></div>
