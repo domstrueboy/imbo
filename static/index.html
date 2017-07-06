@@ -22,29 +22,44 @@
 					</div>
 
 					<div v-else-if="ok === false" class="alert alert-danger" role="alert">
-					  	<strong>Oh snap!</strong> Change a few things up and try submitting again.
+					  	<strong>Oh snap!</strong> It is wrong answer!
 					</div>
-
-			      	<input type="text" v-model="input" v-on:keyup.enter="checkPhrase()"><button v-on:click="checkPhrase()" class="btn btn-sm btn-outline-success">Submit</button>
+			      	
+					<div class="row">
+					  <div class="col"></div>
+					  <div class="col-6">
+					    <div class="input-group">
+					      <span class="input-group-btn">
+					        <button v-on:click="cleanPhrase()" class="btn btn-secondary" type="button">X</button>
+					      </span>
+					      <input id="inp" v-model="input" v-on:keyup.enter="checkPhrase()" type="text" class="form-control" autofocus>
+					      <span class="input-group-btn">
+					        <button v-on:click="checkPhrase()" class="btn btn-success" type="button">Submit it!</button>
+					      </span>
+					    </div>
+					  </div>
+					  <div class="col"></div>
+					</div>
 
 			      	<div class="row">
 			      		<div class="col">
 			      			<div>
 			      				<br>
-			      				<div v-for="row in pronounses" class="row">
-			      					<button v-on:click="inputWord(pronounce)" v-for="pronounce in row" class="btn btn-sm btn-outline-primary">{{ pronounce }}</button>
+			      				<div v-for="row in pronouns" class="row">
+			      					<button v-on:click="inputWord(pronoun)" v-for="pronoun in row" class="btn btn-outline-primary">{{ pronoun }}</button>
 			      				</div>
 			      			</div>
 			      			<div>
 			      				<br>
 			      				<div v-for="row in auxiliary" class="row">
-			      					<button v-on:click="inputWord(auxiliar)" v-for="auxiliar in row" class="btn btn-sm btn-outline-secondary">{{ auxiliar }}</button>
+			      					<button v-on:click="inputWord(auxiliar)" v-for="auxiliar in row" class="btn btn-outline-secondary">{{ auxiliar }}</button>
 			      				</div>
 			      			</div>
 			      		</div>
 
 			      		<div class="col">
-			      			<p>Сказуемое</p>
+			      			<br>
+			      			<button v-on:click="inputWord(verb)" v-for="verb in verbs" class="btn btn-outline-primary">{{ verb }}</button>
 			      		</div>
 
 			      		<div class="col">
