@@ -6,6 +6,7 @@ var app = new Vue(
   data:
   {
   	base: base,
+  	verbsBase: verbsBase,
     phrase: this.base[ getRandomInt(0, this.base.length-1) ],
     input: '',
     ok: null,
@@ -25,12 +26,12 @@ var app = new Vue(
 
   computed:
   {
-  	verbs: function()
+  	words: function()
   	{
-  		var verbs = [];
+  		var words = [];
   		for(let i in this.phrase.en)
   		{
-  			verbs = verbs.concat(
+  			words = words.concat(
   									this.phrase.en[i].replace(',', ' ')
   				  				  			 	 	 .replace(/  +/g, ' ')
   				  				  			 	 	 .replace('`', '')
@@ -39,13 +40,13 @@ var app = new Vue(
   				  				)
   		}
 
-  		let buf = verbs;
+  		let buf = words;
 
-  		for(let i in verbs)
+  		for(let i in words)
   		{
   			this.pronouns.forEach( function(str)
   			{
-  				if( str.includes(verbs[i]) )
+  				if( str.includes(words[i]) )
 	  			{
 	  				buf[i] = null; 
 	  			}
@@ -53,23 +54,55 @@ var app = new Vue(
 
   			this.auxiliary.forEach( function(str)
   			{
-  				if( str.includes(verbs[i]) )
+  				if( str.includes(words[i]) )
 	  			{
 	  				buf[i] = null; 
 	  			}
   			});
   		}
 
-  		console.log(buf);
-
-  		verbs = buf.filter(function(element)
+  		words = buf.filter( function(element) // фильтрация элементов null
 		{
 			return element;
 		});
 
-  		console.log(verbs);
-  		return verbs;
+		words = unique(words);
+
+
+		let verbs = [];
+		let rests = [];
+
+		for(let i in words)
+  		{
+  			let el;
+
+  			el = this.verbsBase.find( function(str)
+			{
+				return str.includes(words[i]);
+			});
+
+  			if(el){
+  				verbs = verbs.concat(el);
+  			}
+  			else
+  			{
+  				rests = rests.concat( words[i] );
+  			}
+  		}
+
+  		verbs = verbs.filter( function(element) // фильтрация элементов undefined
+		{
+			return element;
+		});
+
+  		console.log(verbs); console.log(rests);
+  		return { verbs: verbs, rests: rests};
   	}
+  },
+
+  mounted: function()
+  {
+  	inp.focus();
   },
 
   methods:
@@ -113,7 +146,7 @@ var app = new Vue(
 	    if( flag )
 	    {
 	        app.ok = true;
-	        setTimeout(app.updatePhrase, 2000);
+	        setTimeout(app.updatePhrase, 1000);
 	    }
 	    else
 	    {
@@ -140,3 +173,13 @@ function getRandomInt(min, max)
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function unique(arr) {
+  var obj = {};
+
+  for (var i = 0; i < arr.length; i++) {
+    var str = arr[i];
+    obj[str] = true; // запомнить строку в виде свойства объекта
+  }
+
+  return Object.keys(obj); // или собрать ключи перебором для IE8-
+}

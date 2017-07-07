@@ -1,2 +1,2 @@
 # imbo
-vk bot for training english grammar
+These are a webapp and a vk bot for training english grammar

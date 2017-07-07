@@ -1,4 +1,4 @@
-var base = [
+[
 { "ru": "Я не знаю", "en": [ "i don't know", "i do not know", "i dont know" ],	"tips": ["know"], "type": "-" },
                                                                                                                                                                                         
 { "ru": "Я думаю", "en": [ "i think" ], "tips": ["think"] },

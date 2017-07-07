@@ -1,0 +1,31 @@
+var verbsBase = [
+["know", "knows", "knowing", "knew", "known"],
+                                                                                                                                                                                        
+["think", "thinks", "thinking", "thought"],
+
+["work", "works", "working", "worked"],
+
+["trust", "trusts", "trusting", "trusted"],
+
+["share", "shares", "sharing", "shared"],
+
+["open", "opens", "opening", "opened"],
+
+["go", "goes", "going", "went", "gone"],
+
+["speak", "speaks", "speaking", "spoke", "spoken"],
+
+["close", "closes", "closing", "closed"],
+
+["play", "plays", "playing", "played"],
+
+["need", "needs", "needing", "needed"],
+
+["see", "sees", "seeing", "saw", "seen"],
+
+["meet", "meets", "meeting", "met"],
+
+["ask", "asks", "asking", "asked"],
+
+["study", "studies", "studiing", "studied"]
+]
