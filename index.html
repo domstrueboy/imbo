@@ -7,76 +7,72 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-		<link rel="stylesheet" href="vendors/speech-input/speech-input.css">
+		<link rel="stylesheet" type="text/css" href="vendors/octicons/octicons.min.css">
+		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
 
 		<div id="app" class="container-fluid">
-			<div class="row">
-			    <div class="col-2 hidden-sm-down"></div>
-			    <div class="subject col">
+			<div class="row" style="padding-top: 10px">
+			    <div class="col hidden-sm-down"></div>
+			    <div class="subject col-4">
 
-			    	<p>{{ phrase.ru }}</p>
+			    	<div v-if="ok === null" class="alert alert-info" role="alert">
+					  	<strong>{{ phrase.ru }}</strong>
+					</div>
 
 			    	<div v-if="ok === true" class="alert alert-success" role="alert">
-					  	<strong>Well done!</strong> You successfully read this important alert message.
+					  	<img class="octicon" src="vendors/octicons/svg/thumbsup.svg"> <strong>Well done!</strong> You successfully read this important alert message.
 					</div>
 
 					<div v-else-if="ok === false" class="alert alert-danger" role="alert">
-					  	<strong>Oh snap!</strong> It is wrong answer!
+					  	<img class="octicon" src="vendors/octicons/svg/zap.svg"> <strong>Oh snap!</strong> It is wrong answer! <button v-on:click="updatePhrase()" class="btn btn-sm btn-secondary">Next phrase</button>
 					</div>
 			      	
-					<div class="row">
-					  <div class="col"></div>
-					  <div class="col-6">
-					    <div class="input-group">
-					      <span class="input-group-btn">
-					        <button v-on:click="cleanPhrase()" class="btn btn-secondary" type="button">X</button>
-					      </span>
-					      <input v-model="input" type="text" class="speech-input" data-patience="4" style="width: 0; height: 40px">
-					      <input id="inp" v-model="input" v-on:keyup.enter="checkPhrase()" type="text" class="form-control" autofocus>
-					      <span class="input-group-btn">
+					<div class="input-group">
+					    <span class="input-group-btn">
+					        <button v-on:click="cleanInput()" class="btn btn-secondary" type="button"><img class="octicon" src="vendors/octicons/svg/x.svg"></button>
+					    </span>
+					    <input id="inp" v-model="input" v-on:keyup.enter="checkPhrase()" type="text" class="form-control" autofocus>
+					    <span class="input-group-btn">
 					        <button v-on:click="checkPhrase()" class="btn btn-success" type="button">Submit it!</button>
-					      </span>
-					    </div>
-					  </div>
-					  <div class="col"></div>
+					    </span>
 					</div>
 
 			      	<div class="row">
+
 			      		<div class="col">
-			      			<div>
-			      				<br>
-			      				<div v-for="row in pronouns" class="row">
-			      					<button v-on:click="inputWord(pronoun)" v-for="pronoun in row" class="btn btn-outline-primary">{{ pronoun }}</button>
-			      				</div>
-			      			</div>
-			      			<div>
-			      				<br>
-			      				<div v-for="row in auxiliary" class="row">
-			      					<button v-on:click="inputWord(auxiliar)" v-for="auxiliar in row" class="btn btn-outline-secondary">{{ auxiliar }}</button>
-			      				</div>
+			      			<br>
+			      			<div v-for="row in pronouns" class="row">
+			      				<button v-on:click="inputWord(pronoun)" v-for="pronoun in row" class="btn btn-sm btn-primary" style="margin: 1px">{{ pronoun }}</button>
 			      			</div>
 			      		</div>
 
 			      		<div class="col">
 			      			<br>
-			      			<button v-on:click="inputWord(verb)" v-for="verb in words.verbs" class="btn btn-outline-warning">{{ verb }}</button>
+			      			<div v-for="row in auxiliary" class="row">
+			      				<button v-on:click="inputWord(auxiliar)" v-for="auxiliar in row" class="btn btn-sm btn-warning" style="margin: 1px">{{ auxiliar }}</button>
+			      			</div>
 			      		</div>
 
 			      		<div class="col">
 			      			<br>
-			      			<button v-on:click="inputWord(rest)" v-for="rest in words.rests" class="btn btn-outline-warning">{{ rest }}</button>
+			      			<button v-on:click="inputWord(verb)" v-for="verb in words.verbs" class="btn btn-sm btn-success" style="margin: 1px">{{ verb }}</button>
 			      		</div>
+
+			      		<div class="col">
+			      			<br>
+			      			<button v-on:click="inputWord(rest)" v-for="rest in words.rests" class="btn btn-sm btn-danger" style="margin: 1px">{{ rest }}</button>
+			      		</div>
+
 			      	</div>
 			    </div>
-			    <div class="col-2 hidden-sm-down"></div>
+			    <div class="col hidden-sm-down"></div>
 			 </div>
 		</div>
 		
 		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
-		<script src="vendors/speech-input/speech-input.js"></script>
 		<script src="base.json"></script>
 		<script src="verbs.json"></script>
 		<script src="main.js"></script>

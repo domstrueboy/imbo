@@ -11,16 +11,16 @@ var app = new Vue(
     input: '',
     ok: null,
     pronouns: [
-    			  ['i'],
+    			  ['I'],
     			  ['he', 'she', 'it'],
     			  ['you', 'we', 'they']
     			],
     auxiliary: [
-    			  ['am', 'is', 'are', 'was', 'were', 'will', 'be'],
-    			  ['isnt', 'arent', 'wasnt', 'werent', 'wont' ],
-    			  ['do', 'does', 'did'],
-    			  ['dont', 'doesnt', 'didnt'],
-    			  ['not', 'no']
+    			  ['am', 'is', 'are'],
+            ['was', 'were'],
+            ['will', 'be'],
+    			  ['do', 'does', 'did', 'not'],
+    			  ['have', 'has', 'had', 'no']
     			]
   },
 
@@ -146,18 +146,18 @@ var app = new Vue(
 	    if( flag )
 	    {
 	        app.ok = true;
-	        setTimeout(app.updatePhrase, 1000);
+	        setTimeout(app.updatePhrase, 1500);
 	    }
 	    else
 	    {
 	        app.ok = false;
-	        setTimeout(app.updatePhrase, 5000);
+	        //setTimeout(app.updatePhrase, 5000);
 	    }
 
 	    inp.focus();
     },
 
-    cleanPhrase: function()
+    cleanInput: function()
     {
     	app.input = '';
     	inp.focus();
