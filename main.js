@@ -15,13 +15,26 @@ var app = new Vue(
     			  ['he', 'she', 'it'],
     			  ['you', 'we', 'they']
     			],
+
+    nots: [
+            ['not', 'no']
+        ],
+
     auxiliary: [
     			  ['am', 'is', 'are'],
             ['was', 'were'],
-            ['will', 'be'],
-    			  ['do', 'does', 'did', 'not'],
-    			  ['have', 'has', 'had', 'no']
-    			]
+            ['will', 'be', 'been']
+    			],
+
+    tobes: [
+            ['do', 'does', 'did'],
+            ['have', 'has', 'had']
+          ],
+
+    questions: [
+            ['what', 'why', 'where', 'when', 'who'],
+            ['how', 'many']
+          ]
   },
 
   computed:
@@ -86,7 +99,37 @@ var app = new Vue(
   			}
   			else
   			{
-  				rests = rests.concat( words[i] );
+  				rests = rests.concat( words[i] )
+                       .filter( function(element)
+                       {
+                          return element !== 'i' &&
+                                 element !== 'im' &&
+                                 element !== 'hes' &&
+                                 element !== 'shes' &&
+                                 element !== 'its' &&
+                                 element !== 'youre' &&
+                                 element !== 'were' &&
+                                 element !== 'theyre' &&
+                                 element !== 'ill' &&
+                                 element !== 'hell' &&
+                                 element !== 'shell' &&
+                                 element !== 'itll' &&
+                                 element !== 'youll' &&
+                                 element !== 'theyll' &&
+                                 element !== 'dont' &&
+                                 element !== 'do' &&
+                                 element !== 'doesnt' &&
+                                 element !== 'does' &&
+                                 element !== 'didnt' &&
+                                 element !== 'did' &&
+                                 element !== 'wasnt' &&
+                                 element !== 'werent' &&
+                                 element !== 'wont' &&
+                                 element !== 'ive' &&
+                                 element !== 'id' &&
+                                 element !== 'not' &&
+                                 element !== 'no'
+                       } );
   			}
   		}
 
@@ -161,6 +204,14 @@ var app = new Vue(
     {
     	app.input = '';
     	inp.focus();
+    }
+  },
+
+  filters: {
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
     }
   }
 }
